@@ -48,7 +48,8 @@ try:
                             full_name varchar(40) NOT NULL,
                             mail varchar(40) NOT NULL,
                             phone int NOT NULL,
-                            room_id int NOT NULL REFERENCES room (room_id))'''
+                            room_id int NOT NULL REFERENCES room (room_id),
+                            created_at TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP)'''
     cur.execute(create_person)
 
 # Inserted data to the table person
@@ -72,6 +73,13 @@ try:
 # Deleting the table room
     # cur.execute('DROP TABLE IF EXISTS room;')
     # print("[INFO] Table PERSON was deleted")
+
+# Create table timestamp
+    TimeStamp = (''' CREATE TABLE IF NOT EXISTS time_stamp(
+                        id  SERIAL PRIMARY KEY,
+                        ts TIMESTAMP,
+                        current_time 
+                    )''')
 
     # cnnct.commit()
 
