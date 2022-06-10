@@ -70,8 +70,8 @@ try:
     print(cur.fetchone())
     print("[INFO] Table from PERSON was succefully resived")
 
-# Deleting the table room
-    # cur.execute('DROP TABLE IF EXISTS room;')
+# Deleting the table person
+    # cur.execute('DROP TABLE IF EXISTS person;')
     # print("[INFO] Table PERSON was deleted")
 
 # Create table timestamp
@@ -80,8 +80,6 @@ try:
                         ts TIMESTAMP,
                         current_time 
                     )''')
-
-    # cnnct.commit()
 
 except Exception as error:
     print("[INFO] Error while working with PostgreSQL", error)
